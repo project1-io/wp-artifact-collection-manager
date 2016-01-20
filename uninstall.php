@@ -22,7 +22,7 @@
  * @link       http://skemantix.com
  * @since      1.0.0
  *
- * @package    Wp_Artifact_Collection_Manager
+ * @package    Wp_Collections_Manager
  */
 
 // If uninstall not called from WordPress, then exit.

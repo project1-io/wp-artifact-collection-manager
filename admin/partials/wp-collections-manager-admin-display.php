@@ -8,8 +8,8 @@
  * @link       http://skemantix.com
  * @since      1.0.0
  *
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/admin/partials
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/admin/partials
  */
 ?>
 

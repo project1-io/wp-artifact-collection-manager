@@ -9,8 +9,8 @@
  * @link       http://skemantix.com
  * @since      1.0.0
  *
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
- * @author     Seb Grinham <seb@project1.io>
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
+ * @author     project_1 <seb@project1.io>
  */
-class Wp_Artifact_Collection_Manager_i18n {
+class Wp_Collections_Manager_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Wp_Artifact_Collection_Manager_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'wp-artifact-collection-manager',
+			'wp-collections-manager',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

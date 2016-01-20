@@ -6,8 +6,8 @@
  * @link       http://skemantix.com
  * @since      1.0.0
  *
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
- * @author     Seb Grinham <seb@project1.io>
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
+ * @author     project_1 <seb@project1.io>
  */
-class Wp_Artifact_Collection_Manager_Activator {
+class Wp_Collections_Manager_Activator {
 
 	/**
 	 * Short Description. (use period)

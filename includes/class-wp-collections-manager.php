@@ -9,8 +9,8 @@
  * @link       http://skemantix.com
  * @since      1.0.0
  *
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
- * @author     Seb Grinham <seb@project1.io>
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
+ * @author     project_1 <seb@project1.io>
  */
-class Wp_Artifact_Collection_Manager {
+class Wp_Collections_Manager {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Wp_Artifact_Collection_Manager {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Wp_Artifact_Collection_Manager_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Wp_Collections_Manager_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -68,7 +68,7 @@ class Wp_Artifact_Collection_Manager {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'wp-artifact-collection-manager';
+		$this->plugin_name = 'wp-collections-manager';
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
@@ -83,10 +83,10 @@ class Wp_Artifact_Collection_Manager {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Wp_Artifact_Collection_Manager_Loader. Orchestrates the hooks of the plugin.
-	 * - Wp_Artifact_Collection_Manager_i18n. Defines internationalization functionality.
-	 * - Wp_Artifact_Collection_Manager_Admin. Defines all hooks for the admin area.
-	 * - Wp_Artifact_Collection_Manager_Public. Defines all hooks for the public side of the site.
+	 * - Wp_Collections_Manager_Loader. Orchestrates the hooks of the plugin.
+	 * - Wp_Collections_Manager_i18n. Defines internationalization functionality.
+	 * - Wp_Collections_Manager_Admin. Defines all hooks for the admin area.
+	 * - Wp_Collections_Manager_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -100,33 +100,33 @@ class Wp_Artifact_Collection_Manager {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-artifact-collection-manager-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-collections-manager-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-artifact-collection-manager-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-collections-manager-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-artifact-collection-manager-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-collections-manager-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-artifact-collection-manager-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-collections-manager-public.php';
 
-		$this->loader = new Wp_Artifact_Collection_Manager_Loader();
+		$this->loader = new Wp_Collections_Manager_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Wp_Artifact_Collection_Manager_i18n class in order to set the domain and to register the hook
+	 * Uses the Wp_Collections_Manager_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -134,7 +134,7 @@ class Wp_Artifact_Collection_Manager {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Wp_Artifact_Collection_Manager_i18n();
+		$plugin_i18n = new Wp_Collections_Manager_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -149,7 +149,7 @@ class Wp_Artifact_Collection_Manager {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Wp_Artifact_Collection_Manager_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Wp_Collections_Manager_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -165,7 +165,7 @@ class Wp_Artifact_Collection_Manager {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Wp_Artifact_Collection_Manager_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Wp_Collections_Manager_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -196,7 +196,7 @@ class Wp_Artifact_Collection_Manager {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Wp_Artifact_Collection_Manager_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Wp_Collections_Manager_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

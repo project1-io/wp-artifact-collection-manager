@@ -6,8 +6,8 @@
  * @link       http://skemantix.com
  * @since      1.0.0
  *
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Wp_Artifact_Collection_Manager
- * @subpackage Wp_Artifact_Collection_Manager/includes
- * @author     Seb Grinham <seb@project1.io>
+ * @package    Wp_Collections_Manager
+ * @subpackage Wp_Collections_Manager/includes
+ * @author     project_1 <seb@project1.io>
  */
-class Wp_Artifact_Collection_Manager_Loader {
+class Wp_Collections_Manager_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
